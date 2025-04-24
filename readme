@@ -1,0 +1,7 @@
+First: What is Parsing?
+Parsing in minishell means:
+
+Taking what the user typed (a string) and breaking it down into small pieces that you can understand and use.
+
+These pieces are called tokens.
+
