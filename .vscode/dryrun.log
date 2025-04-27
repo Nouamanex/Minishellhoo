@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nchagour/Desktop/Minishellhoo'
+cc -Wall -Wextra -Werror -lreadline -c main.c -o main.o
+cc -Wall -Wextra -Werror -lreadline -c mini_functions.c -o mini_functions.o
+cc -Wall -Wextra -Werror -lreadline -c lexer.c -o lexer.o
+make -C libft all
+cc -Wall -Wextra -Werror -lreadline main.o mini_functions.o lexer.o libft/libft.a -o minishell
+make: Leaving directory '/home/nchagour/Desktop/Minishellhoo'
+ 

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_functions.c                                   :+:      :+:    :+:   */
+/*   cleaning.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 15:04:37 by nchagour          #+#    #+#             */
-/*   Updated: 2025/04/26 17:37:41 by nchagour         ###   ########.fr       */
+/*   Created: 2025/04/27 18:59:22 by nchagour          #+#    #+#             */
+/*   Updated: 2025/04/27 20:40:39 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int is_whitespaces(int c)
+void	clean_tokens(t_token **tokliste)
 {
-    if (c == ' ' ||(c >= 9 && c <= 13))
-        return 1;
-    return 0;
-}
+	t_token	*temp;
 
-int is_symbol(int c)
-{
-    if (c == '|' || c == '<' || c == '>')
-        return 1;
-    return 0;
+	while (*tokliste)
+	{
+		temp = *tokliste;
+		*tokliste = (*tokliste)->next;
+		free(temp);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 21:12:15 by nchagour          #+#    #+#             */
-/*   Updated: 2025/04/24 22:35:23 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/04/27 22:24:06 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,41 +19,49 @@ t_token *create_token(char *content, int type)
     tok = malloc(sizeof(t_token));
     if (!tok)
         exit(1);
-    tok->content = content;
+    tok->content = ft_strdup(content);
     tok->type = type;
     tok->next = NULL;
     return tok;
 }
 
 //bach nzido token f liste
-void add_token(t_token **head, t_token *new)
+void	add_token(t_token **head, char *data, int type)
 {
-	t_token *temp;
+	t_token	*temp;
+	t_token	*new;
 
-	if (!*head)
+	new = create_token(data, type);
+	if (*head == NULL)
 	{
 		*head = new;
-		return;
+		return ;
 	}
 	temp = *head;
-	while (temp->next)
+	while (temp->next != NULL)
 		temp = temp->next;
 	temp->next = new;
 }
 
-void printtoken(char *toprint, int start, int end)
+//show tokens
+void printtoken(t_token *tokliste)
 {
-    char *input;
-
-    input = ft_substr(toprint, start, end - start);
-    printf("%s\n", input);
-    free(input);
+    while (tokliste)
+    {
+        printf("Data --> [%s]\ntype number --> %d\n", tokliste->content, tokliste->type);
+        tokliste = tokliste->next;
+    }
 }
 
-void tokens(char *input)
+//hna kandir tokens f blastha m3a type dyalha bisti3mal addtoken function
+void tokens(char *input, t_token **tokliste)
 {
     int i;
     int start;
+    int type;
+    char symbol[2];
+    char *word;
+    char quote;
 
     i = 0;
     start = 0;
@@ -63,20 +71,56 @@ void tokens(char *input)
             i++;
         else if(is_symbol(input[i]))
         {
-            printtoken(input, i, i + 1);
-            i++;
+           if (input[i] == '>' && input[i + 1] == '>')
+            {
+                word = ft_strdup(">>");
+                add_token(tokliste, word, X_DREDIR_OUT);
+                i += 2;
+                free(word);
+            }
+            else if (input[i] == '<' && input[i + 1] == '<')
+            {
+                word = ft_strdup("<<");
+                add_token(tokliste, word, X_HERE_DOC);
+                i += 2;
+                free(word);
+            }
+            else
+            {
+                symbol[0] = input[i];
+                symbol[1] = '\0';
+                if (input[i] == '|')
+                    type = X_PIPE;
+                else if (input[i] == '>')
+                    type = X_REDIR_OUT;
+                else if (input[i] == '<')
+                    type = X_REDIR_IN;
+                word = ft_strdup(symbol);
+                add_token(tokliste, word, type);
+                i++;
+            }
+        }
+        else if (input[i] == '"' || input[i] == '\'')
+        {
+            quote = input[i];
+            start = i + 1;
+            ++i;
+            while (input[i] && input[i] != quote)
+                i++;
+            word = ft_substr(input, start, i - start);
+            add_token(tokliste, word, X_WORD);
+            free(word);
+            if (input[i] == quote)
+		    i++;
         }
         else
         {
             start = i;
             while (input[i] && !is_symbol(input[i]) && !is_whitespaces(input[i]))
-            {
                 i++;
-            }
-            printtoken(input, start, i);
+            word = ft_substr(input, start, i - start);
+            add_token(tokliste, word, X_WORD);
+            free(word);
         }
     }
-    
 }
-
-

@@ -4,7 +4,7 @@ CC=cc
 LIBFT =  libft/libft.a
 CFLAGS = -Wall -Wextra -Werror -lreadline
 
-SRC=main.c mini_functions.c lexer.c
+SRC=main.c mini_functions.c lexer.c errors.c cleaning.c 
 
 OBJ=$(SRC:.c=.o)
 
