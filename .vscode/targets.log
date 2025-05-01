@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Apr 26 17:33:35 2025
+# Make data base, printed on Thu May  1 21:10:48 2025
 
 # Variables
 
@@ -16,10 +16,8 @@ OBJ = $(SRC:.c=.o)
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
-# environment
-NO_AT_BRIDGE = 1
 # makefile (from 'Makefile', line 7)
-SRC = main.c mini_functions.c lexer.c
+SRC = main.c mini_functions.c lexer.c errors.c cleaning.c lexer2.c
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
@@ -47,7 +45,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/nchagour/Desktop/Minishellhoo
+PWD = /home/nchagour/Desktop/Cercle 3/Minishellhoo
 # environment
 ZYPAK_ZYGOTE_STRATEGY_SPAWN = 1
 # automatic
@@ -61,9 +59,9 @@ XDG_DATA_DIRS = /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-sh
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/nchagour/.var/app/com.visualstudio.code/config/Code/CachedData/f1a4fb101478ce6ec82fe9627c43efbf9e98c813
+VSCODE_CODE_CACHE_PATH = /home/nchagour/.var/app/com.visualstudio.code/config/Code/CachedData/4949701c880d4bdb949e3c0e6b400288da7f474b
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session17
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
 # makefile (from 'Makefile', line 4)
 LIBFT = libft/libft.a
 # environment
@@ -79,7 +77,7 @@ ALSA_CONFIG_DIR = /usr/share/alsa
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/nchagour/Desktop/Minishellhoo
+CURDIR := /home/nchagour/Desktop/Cercle 3/Minishellhoo
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
@@ -111,7 +109,7 @@ FLATPAK_SANDBOX_DIR = /home/nchagour/.var/app/com.visualstudio.code/sandbox
 # environment
 VSCODE_PID = 22
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101089_8mX9R7
+KRB5CCNAME = FILE:/tmp/krb5cc_101089_nlOHIE
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -123,7 +121,7 @@ AT_SPI_BUS_ADDRESS = unix:path=/run/flatpak/at-spi-bus
 # environment
 XDG_DATA_HOME = /home/nchagour/.var/app/com.visualstudio.code/data
 # environment
-SESSION_MANAGER = local/c2r2p2.1337.ma:@/tmp/.ICE-unix/339077,unix/c2r2p2.1337.ma:/tmp/.ICE-unix/339077
+SESSION_MANAGER = local/c2r6p6.1337.ma:@/tmp/.ICE-unix/18069,unix/c2r6p6.1337.ma:/tmp/.ICE-unix/18069
 # automatic
 *F = $(notdir $*)
 # environment
@@ -173,7 +171,7 @@ DBUS_SYSTEM_BUS_ADDRESS = unix:path=/run/dbus/system_bus_socket
 # environment
 XDG_CONFIG_HOME = /home/nchagour/.var/app/com.visualstudio.code/config
 # environment
-INVOCATION_ID = f74da1b2532f48bba00b54fecd3e9919
+INVOCATION_ID = b6640032470b43428bbda92deb8aaca4
 # environment
 DOCKER_HOST = unix:///run/user/101089/docker.sock
 # automatic
@@ -205,7 +203,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/flatpak/exports/share/applications/com.visu
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 339100
+SYSTEMD_EXEC_PID = 18092
 # environment
 NPM_CONFIG_GLOBALCONFIG = /app/etc/npmrc
 # environment
@@ -217,9 +215,9 @@ DISPLAY = :99.0
 # default
 MAKE_VERSION := 4.4.1
 # environment
-MANAGERPID = 338479
+MANAGERPID = 17473
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 347558
+GIO_LAUNCHED_DESKTOP_FILE_PID = 18624
 # environment
 _ = /usr/bin/make
 # environment
@@ -231,7 +229,7 @@ GPG_AGENT_INFO = /run/user/101089/gnupg/S.gpg-agent:0:1
 # environment
 PULSE_CLIENTCONFIG = /run/flatpak/pulse/config
 # environment
-JOURNAL_STREAM = 8:1877175
+JOURNAL_STREAM = 8:152493
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -241,7 +239,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/101089/vscode-527c89b3-1.95-main.sock
+VSCODE_IPC_HOOK = /run/user/101089/vscode-527c89b3-1.99-main.sock
 # environment
 FT_HOOK_PATHNAME = login-user.d
 # default
@@ -275,7 +273,7 @@ ZYPAK_BIN = /app/bin
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=23/170=14%
+# Load=131/1024=13%, Rehash=0, Collisions=21/169=12%
 
 # Pattern-specific Variable Values
 
@@ -283,9 +281,9 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 2048, inode 6298728): 11 files, no impossibilities.
+# . (device 2048, inode 6298728): 15 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -296,11 +294,23 @@ GDMSESSION = ubuntu
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-minishell: main.o mini_functions.o lexer.o libft/libft.a
+# Not a target:
+lexer2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+errors.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o libft/libft.a
 #  Implicit rule search has not been done.
 #  File does not exist.
- 
 #  File has been updated.
+ 
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
@@ -311,7 +321,7 @@ minishell: main.o mini_functions.o lexer.o libft/libft.a
 Makefile:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-04-24 22:11:20.786158
+#  Last modified 2025-04-30 17:42:49.511320022
 #  File has been updated.
 #  Successfully updated.
 
@@ -330,6 +340,12 @@ clean:
 #  recipe to execute (from 'Makefile', line 23):
 	make -C libft clean
 	rm -f $(OBJ)
+
+# Not a target:
+cleaning.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 lexer.o:
@@ -374,7 +390,7 @@ fclean: clean
 main.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-04-24 22:12:31.860045
+#  Last modified 2025-05-01 18:56:11.380033219
 #  File has been updated.
 #  Successfully updated.
 
@@ -417,19 +433,19 @@ mini_functions.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/43=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/49=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 212 B / avg = 7 B
-# current buf: size = 8162 B / used = 212 B / count = 27 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 276 B / avg = 8 B
+# current buf: size = 8162 B / used = 276 B / count = 34 / avg = 8 B
 
-# strcache performance: lookups = 49 / hit rate = 44%
+# strcache performance: lookups = 56 / hit rate = 39%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=1/49=2%
-# Finished Make data base on Sat Apr 26 17:33:35 2025
+# Load=34/8192=0%, Rehash=0, Collisions=1/56=2%
+# Finished Make data base on Thu May  1 21:10:48 2025
 
  

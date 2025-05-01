@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 21:12:15 by nchagour          #+#    #+#             */
-/*   Updated: 2025/04/27 22:24:06 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/04/29 10:03:06 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 t_token *create_token(char *content, int type)
 {
     t_token *tok;
+    
     tok = malloc(sizeof(t_token));
     if (!tok)
         exit(1);
@@ -97,6 +98,7 @@ void tokens(char *input, t_token **tokliste)
                     type = X_REDIR_IN;
                 word = ft_strdup(symbol);
                 add_token(tokliste, word, type);
+                free(word);
                 i++;
             }
         }
