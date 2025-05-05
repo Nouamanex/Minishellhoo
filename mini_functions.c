@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:04:37 by nchagour          #+#    #+#             */
-/*   Updated: 2025/04/26 17:37:41 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/04 16:41:07 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,21 @@ int is_symbol(int c)
     if (c == '|' || c == '<' || c == '>')
         return 1;
     return 0;
+}
+
+char* checkDollar(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        if (str[i] == '$')
+        {
+            i++;
+            return str + i;
+        }
+        i++;
+    }
+    return NULL;
 }

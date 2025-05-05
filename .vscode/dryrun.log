@@ -6,7 +6,8 @@ cc -Wall -Wextra -Werror -lreadline -c lexer.c -o lexer.o
 cc -Wall -Wextra -Werror -lreadline -c errors.c -o errors.o
 cc -Wall -Wextra -Werror -lreadline -c cleaning.c -o cleaning.o
 cc -Wall -Wextra -Werror -lreadline -c lexer2.c -o lexer2.o
+cc -Wall -Wextra -Werror -lreadline -c lexer3.c -o lexer3.o
 make -C libft all
-cc -Wall -Wextra -Werror -lreadline main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o libft/libft.a -o minishell
+cc -Wall -Wextra -Werror -lreadline main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o lexer3.o libft/libft.a -o minishell
 make: Leaving directory '/home/nchagour/Desktop/Cercle 3/Minishellhoo'
  

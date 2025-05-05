@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May  1 21:10:48 2025
+# Make data base, printed on Mon May  5 20:22:18 2025
 
 # Variables
 
@@ -17,7 +17,7 @@ GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 7)
-SRC = main.c mini_functions.c lexer.c errors.c cleaning.c lexer2.c
+SRC = main.c mini_functions.c lexer.c errors.c cleaning.c lexer2.c lexer3.c
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
@@ -32,8 +32,6 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 VSCODE_CWD = /home/nchagour
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
-# environment
-GDM_LANG = en
 # default
 MAKE_COMMAND := make
 # environment
@@ -61,7 +59,7 @@ XDG_DATA_DIRS = /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-sh
 # environment
 VSCODE_CODE_CACHE_PATH = /home/nchagour/.var/app/com.visualstudio.code/config/Code/CachedData/4949701c880d4bdb949e3c0e6b400288da7f474b
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
 # makefile (from 'Makefile', line 4)
 LIBFT = libft/libft.a
 # environment
@@ -109,7 +107,7 @@ FLATPAK_SANDBOX_DIR = /home/nchagour/.var/app/com.visualstudio.code/sandbox
 # environment
 VSCODE_PID = 22
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101089_nlOHIE
+KRB5CCNAME = FILE:/tmp/krb5cc_101089_La4ydz
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -121,7 +119,7 @@ AT_SPI_BUS_ADDRESS = unix:path=/run/flatpak/at-spi-bus
 # environment
 XDG_DATA_HOME = /home/nchagour/.var/app/com.visualstudio.code/data
 # environment
-SESSION_MANAGER = local/c2r6p6.1337.ma:@/tmp/.ICE-unix/18069,unix/c2r6p6.1337.ma:/tmp/.ICE-unix/18069
+SESSION_MANAGER = local/c2r1p3.1337.ma:@/tmp/.ICE-unix/75543,unix/c2r1p3.1337.ma:/tmp/.ICE-unix/75543
 # automatic
 *F = $(notdir $*)
 # environment
@@ -131,7 +129,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/flatpak/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/app/extra/vscode/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}
+VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/app/extra/vscode/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}
 # environment
 __EGL_EXTERNAL_PLATFORM_CONFIG_DIRS = /etc/egl/egl_external_platform.d:/usr/lib/x86_64-linux-gnu/GL/egl/egl_external_platform.d:/usr/share/egl/egl_external_platform.d
 # default
@@ -162,8 +160,6 @@ PATH = /app/bin:/app/bin:/app/bin:/usr/bin:/home/nchagour/.var/app/com.visualstu
 XCURSOR_PATH = /run/host/user-share/icons:/run/host/share/icons
 # default
 MAKEFILES := 
-# environment
-LANGUAGE = en
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -171,7 +167,7 @@ DBUS_SYSTEM_BUS_ADDRESS = unix:path=/run/dbus/system_bus_socket
 # environment
 XDG_CONFIG_HOME = /home/nchagour/.var/app/com.visualstudio.code/config
 # environment
-INVOCATION_ID = b6640032470b43428bbda92deb8aaca4
+INVOCATION_ID = 4e059a56943445aea6e3912c53310d7d
 # environment
 DOCKER_HOST = unix:///run/user/101089/docker.sock
 # automatic
@@ -203,7 +199,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/flatpak/exports/share/applications/com.visu
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 18092
+SYSTEMD_EXEC_PID = 75566
 # environment
 NPM_CONFIG_GLOBALCONFIG = /app/etc/npmrc
 # environment
@@ -215,9 +211,9 @@ DISPLAY = :99.0
 # default
 MAKE_VERSION := 4.4.1
 # environment
-MANAGERPID = 17473
+MANAGERPID = 74964
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 18624
+GIO_LAUNCHED_DESKTOP_FILE_PID = 80704
 # environment
 _ = /usr/bin/make
 # environment
@@ -229,7 +225,7 @@ GPG_AGENT_INFO = /run/user/101089/gnupg/S.gpg-agent:0:1
 # environment
 PULSE_CLIENTCONFIG = /run/flatpak/pulse/config
 # environment
-JOURNAL_STREAM = 8:152493
+JOURNAL_STREAM = 8:584858
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -252,6 +248,7 @@ SUFFIXES :=
 XDG_CACHE_HOME = /home/nchagour/.var/app/com.visualstudio.code/cache
 # environment
 VSCODE_CLI = 1
+ 
 # environment
 FT_HOOK_NAME = login-user
 # environment
@@ -273,7 +270,7 @@ ZYPAK_BIN = /app/bin
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=21/169=12%
+# Load=129/1024=13%, Rehash=0, Collisions=20/167=12%
 
 # Pattern-specific Variable Values
 
@@ -281,9 +278,9 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 2048, inode 6298728): 15 files, no impossibilities.
+# . (device 2048, inode 6298728): 24 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -306,11 +303,10 @@ errors.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o libft/libft.a
+minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o lexer3.o libft/libft.a
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2025-05-04 17:50:59.358674787
 #  File has been updated.
- 
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
@@ -321,7 +317,7 @@ minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o libft/li
 Makefile:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-04-30 17:42:49.511320022
+#  Last modified 2025-05-04 16:20:19.984367462
 #  File has been updated.
 #  Successfully updated.
 
@@ -390,14 +386,14 @@ fclean: clean
 main.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-01 18:56:11.380033219
+#  Last modified 2025-05-04 17:51:09.116664376
 #  File has been updated.
 #  Successfully updated.
 
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  File does not exist.
+#  Last modified 2025-05-04 17:50:59.346674799
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -427,25 +423,31 @@ mini_functions.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+lexer3.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/49=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/51=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 276 B / avg = 8 B
-# current buf: size = 8162 B / used = 276 B / count = 34 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 295 B / avg = 8 B
+# current buf: size = 8162 B / used = 295 B / count = 36 / avg = 8 B
 
-# strcache performance: lookups = 56 / hit rate = 39%
+# strcache performance: lookups = 66 / hit rate = 45%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=1/56=2%
-# Finished Make data base on Thu May  1 21:10:48 2025
+# Load=36/8192=0%, Rehash=0, Collisions=1/66=2%
+# Finished Make data base on Mon May  5 20:22:18 2025
 
  

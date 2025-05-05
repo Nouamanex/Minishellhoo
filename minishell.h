@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:48:17 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/01 22:40:21 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:00:41 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include <fcntl.h>
 #include <readline/history.h>
 #include <readline/readline.h>
-
 
 //wahd enum bach tshel 3lina lkhdma
 enum e_type
@@ -38,12 +37,11 @@ enum e_type
     X_WORD = -1 //drt -1 hit word ma3ndhach ascii number bhal lakhrin 3bbrt 3liha b -1
 };
 
-//                             ---PARCING---
+                            //---PARCING---
 //for data
 typedef struct s_data
 {
     char *input;
-	int flag1;
 }t_data;
 
 //for tokens
@@ -60,27 +58,31 @@ typedef struct s_command
 	int input_file; // file descriptor for input redirection <
 	int output_file; // file descriptor for output redirection >
 	struct s_command *next;
-}t_command;
+}t_command; //!!!bnisba l hadi rah kayna case dyal echo nouamane>file1.txt>file2.txt  ya3ni 3ndna 2 files!! 
+			//so hna ach kaytra rah kay7el lfile lwel okayclosih makayktb fih walo o akhir wahd howa fach kaykteb howa likankhbi fd dyalo!
+			//lprob li3ndi howa anaho mol execution fach ghaybghi idir fork ghaywliw 3ndna 2 processes
 
 //some parsing helper functions
 int			is_whitespaces(int c);
 int			is_symbol(int c);
+char* 		checkDollar(char *str);
 
 //tokens
 void		tokens(char *input, t_token **tokliste);
 void		printtoken(t_token *tokliste);
 void		add_token(t_token **head, char *data, int type);
-
-//errors
-int			error_start_line(t_token *tokliste);
-
-//cleaning
-void		clean_tokens(t_token **tokliste);
-void		free_cmds(t_command **cmd);
+void		replace_env(t_token **tokliste);
 
 //command
 t_command 	*create_cmd();
 t_command *cmd_build_list(t_token *tokliste);
 void print_command(t_command *list_cmd);
+
+//cleaning
+void		clean_tokens(t_token **tokliste);
+void		clean_cmd(t_command **cmd);
+
+//errors
+int			error_start_line(t_token *tokliste);
 
 #endif

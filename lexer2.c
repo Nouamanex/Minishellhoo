@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:57:09 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/01 22:39:17 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/04 14:13:57 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,13 +114,19 @@ t_command *cmd_build_list(t_token *tokliste)
     return liste_cmd;
 }
 
-void print_command(t_command *cmds) // kanprinti les command
+void print_command(t_command *cmds)
 {
+    int i;
+
     while (cmds)
     {
         printf("Command:\n");
-        for (int i = 0; cmds->full_cmd && cmds->full_cmd[i]; i++)
-            printf("  Arg[%d]: %s\n", i, cmds->full_cmd[i]);
+        i = 0;
+        while (cmds->full_cmd && cmds->full_cmd[i])
+        {
+            printf("Arg[%d]: %s\n", i, cmds->full_cmd[i]);
+            i++;
+        }
         printf("Input file: %d\n", cmds->input_file);
         printf("Output file: %d\n", cmds->output_file);
         cmds = cmds->next;
