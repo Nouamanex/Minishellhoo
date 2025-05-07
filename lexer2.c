@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:57:09 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/04 14:13:57 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:03:29 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,15 @@ t_command *cmd_build_list(t_token *tokliste)
 
     liste_cmd = NULL;
     cmd = NULL;
-
     while (tokliste)
     {
-        if (!cmd)//fkol mra dkhlt command kanrdo null bach idkhl tani hna wibda ijm3lia command tani mn lwl
+        if (!cmd) //fkol mra dkhlt command kanrdo null bach idkhl tani hna wibda ijm3lia command tani mn lwl
         {
             cmd = create_cmd();
             if(!cmd)
                 return NULL;
         }
-        if (tokliste->type == X_WORD)//check ila kan word olakhrin ila kano hajat akhrin
+        if (tokliste->type == X_WORD) //check ila kan word olakhrin ila kano hajat akhrin
         {
             add_arg(cmd, tokliste->content); // zido 3la words lakhrin bach nkmel command
         }

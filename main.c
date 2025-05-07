@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:56:13 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/05 21:03:19 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:00:58 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ void parsing(t_data *data)
         write(2, "Something is wrong near line start!\n", 37);
         clean_tokens(&tok);
     }
-    // env_get(tok);
-    // env_test = env_get(tok);
     printtoken(tok);
-    // printf("----> %s\n", env_test);
-    // print_command(cmdlist);
     clean_tokens(&tok);
     clean_cmd(&cmdlist);
 }

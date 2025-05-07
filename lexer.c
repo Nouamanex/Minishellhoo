@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 21:12:15 by nchagour          #+#    #+#             */
-/*   Updated: 2025/04/29 10:03:06 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:29:26 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
 // kancreer wahd token jdida bach nzidha f linked liste
-t_token *create_token(char *content, int type)
+t_token *create_token(char *content, int type, int flag)
 {
     t_token *tok;
     
@@ -23,16 +23,17 @@ t_token *create_token(char *content, int type)
     tok->content = ft_strdup(content);
     tok->type = type;
     tok->next = NULL;
+    tok->flag_quote = flag;
     return tok;
 }
 
 //bach nzido token f liste
-void	add_token(t_token **head, char *data, int type)
+void	add_token(t_token **head, char *data, int type, int flag)
 {
 	t_token	*temp;
 	t_token	*new;
 
-	new = create_token(data, type);
+	new = create_token(data, type, flag);
 	if (*head == NULL)
 	{
 		*head = new;
@@ -49,7 +50,7 @@ void printtoken(t_token *tokliste)
 {
     while (tokliste)
     {
-        printf("Data --> [%s]\ntype number --> %d\n", tokliste->content, tokliste->type);
+        printf("Data --> [%s]\ntype number --> %d\nflag --> %d\n", tokliste->content, tokliste->type, tokliste->flag_quote);
         tokliste = tokliste->next;
     }
 }
@@ -63,8 +64,10 @@ void tokens(char *input, t_token **tokliste)
     char symbol[2];
     char *word;
     char quote;
+    int flag;
 
     i = 0;
+    flag = 0;
     start = 0;
     while (input[i])
     {
@@ -75,14 +78,16 @@ void tokens(char *input, t_token **tokliste)
            if (input[i] == '>' && input[i + 1] == '>')
             {
                 word = ft_strdup(">>");
-                add_token(tokliste, word, X_DREDIR_OUT);
+                flag = 0;
+                add_token(tokliste, word, X_DREDIR_OUT, flag);
                 i += 2;
                 free(word);
             }
             else if (input[i] == '<' && input[i + 1] == '<')
             {
                 word = ft_strdup("<<");
-                add_token(tokliste, word, X_HERE_DOC);
+                flag = 0;
+                add_token(tokliste, word, X_HERE_DOC, flag);
                 i += 2;
                 free(word);
             }
@@ -97,7 +102,8 @@ void tokens(char *input, t_token **tokliste)
                 else if (input[i] == '<')
                     type = X_REDIR_IN;
                 word = ft_strdup(symbol);
-                add_token(tokliste, word, type);
+                flag = 0;
+                add_token(tokliste, word, type, flag);
                 free(word);
                 i++;
             }
@@ -110,7 +116,9 @@ void tokens(char *input, t_token **tokliste)
             while (input[i] && input[i] != quote)
                 i++;
             word = ft_substr(input, start, i - start);
-            add_token(tokliste, word, X_WORD);
+            if (input[i] == '\'')
+                flag = 1;
+            add_token(tokliste, word, X_WORD, flag);
             free(word);
             if (input[i] == quote)
 		    i++;
@@ -121,7 +129,8 @@ void tokens(char *input, t_token **tokliste)
             while (input[i] && !is_symbol(input[i]) && !is_whitespaces(input[i]))
                 i++;
             word = ft_substr(input, start, i - start);
-            add_token(tokliste, word, X_WORD);
+            flag = 0;
+            add_token(tokliste, word, X_WORD, flag);
             free(word);
         }
     }

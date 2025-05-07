@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:21:46 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/06 17:47:23 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/07 16:41:55 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ int error_start_line(t_token *tokliste)
     return 0;
 }
 
-int error_quotes(char *str)
-{
-    int i;
+// int error_quotes(char *str)
+// {
+//     int i;
 
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] == "'")
-        {
+//     i = 0;
+//     while (str[i])
+//     {
+//         if (str[i] == "'")
+//         {
             
-        }
-    }
+//         }
+//     }
     
-}
+// }
