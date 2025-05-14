@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/07 18:28:24 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/14 22:38:09 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,67 +15,65 @@
 //working...
 //mazal khdam 3liha
 
+size_t	ft_strlen_env(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] && s[i] != '$')
+	{
+		i++;
+	}
+	return (i);
+}
+
 void replace_env(t_token **tokliste)
 {
-    char *str;
-    int i;
-    int len_str;
-    char *var_env;
-    char *env_value;
-    int befor;
-    char *strbefor;
-    char *new_content;
-    int singlequote;
     t_token *tmp;
-
+    char *str; // kankhbi fiha string dyali li f token
+    char *resultstr; //result dyali lighan7tha f token blast dakchi likan fih
+    char *strbefore; //dakchi li9bel $
+    char *strvar; //dakchi limor $ kanchecki wach dakhl f env okan7t result f getenv
+    char *envvalue; //dakchi lirj3atlia getenv matalan nchagour
+    int i;
+    int j;
+    int var_len; //katakhdlia length dyal dakchi limor $ 3la wdit substr
+    
     tmp = *tokliste;
-    befor = 0;
-
     while (tmp)
     {
-        singlequote = 0;
         if (tmp->flag_quote == 1)
-            singlequote = 1;
-        str = tmp->content; //kol content kancheckih bohdo
-        i = 0;
-        while (str[i])
         {
-            if (str[i] == '\'' && singlequote == 0)
-                singlequote = 1;
-            if (str[i] == '$' && str[i + 1]) // ila l9alia $ fchi kelma
-            {
-                befor = i; // kan39el 3la lblasa li9bel dollar hit momkin ikon 3ndi bhal haka ss$USER khess tkhrjlia ssnchagour
-                i++; 
-                len_str = 0;
-                len_str = ft_strlen(&str[i]); // kan7seb length dyal dkchi limor dollar
-                var_env = ft_substr(str, i, len_str); // kan7et dakchi limor $ f var_env
-                env_value = getenv(var_env); // daba dakchi likhdato var_env matalan kan USER khs tkhrjlia nchagour
-                
-                strbefor = ft_substr(str, 0, befor); //daba fi 7alat kant chihaja 9bel $ 7ethalia f strbefore
-                // printf("%d\n", tmp->flag_quote);
-                if(env_value && singlequote)
-                {
-                    printf("2\n");
-                    
-                    new_content = ft_strdup(str);
-                }
-                else if (env_value) 
-                {
-                    new_content = ft_strjoin(strbefor, env_value); //ila rj3atlina getenv chihaja joinihalia m3a dakchi li9bel $
-                }
-                else
-                {
-                    printf("hereee\n");
-                    new_content = ft_strdup(strbefor); //sinon safi 7etlia gha dak string 3adi matalan (ss$haha) haha makaynach so khs iktblia gha ss
-                }
-                free(var_env); //safi ma3ndi mandir biha
-                free(strbefor);
-                free(tmp->content);
-                tmp->content = new_content;
-                break;
-            }
-            i++;
+            tmp = tmp->next; //ila kant fhad token '' safi gha n9zha hit ma kat expandach b $
+            continue; //safi rje3 3awd matkemelch
         }
+        str = tmp->content; // bayna :)
+        i = 0; 
+        resultstr = ""; // bach first join madirch mochkil
+        while (str[i]) //kandor 3la string dyali
+        {
+            if (str[i] == '$' && str[i + 1]) //l9it wahd dollar
+            {
+                strbefore = ft_substr(str, 0, i); //dakchi li9bel $ 7etolia hna
+                resultstr = ft_strjoin(resultstr, strbefore); // joinilia dakchi lil9iti m3a result
+                j = i + 1; //bach nfot $
+                var_len = ft_strlen_env(&str[j]); //hssblia length dyal dakchi limor $
+                strvar = ft_substr(str, j, var_len); // 7etolia hna bach nsifto l getenv
+                envvalue = getenv(strvar); // sifto db l getenv
+                if (envvalue) //ila l9iti chihaja
+                {
+                    resultstr = ft_strjoin(resultstr, envvalue); //joinilia dkchi likhrjlia m3a result kil3ada
+                }
+                i = j + var_len; //i daba khsha tskipi dkchi kaml bach khdemna bach nupdati string dyali bach nkml bih lkhdma
+                str = &str[i]; //$USER$PATH = $PATH
+                i = 0;
+            }
+            else{
+                i++;
+            }
+        }
+        resultstr = ft_strjoin(resultstr, str); 
+        tmp->content = resultstr;
         tmp = tmp->next;
     }
 }
