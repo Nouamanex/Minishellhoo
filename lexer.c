@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 21:12:15 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/07 18:29:26 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/15 02:08:19 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void tokens(char *input, t_token **tokliste)
     i = 0;
     flag = 0;
     start = 0;
+    // if (!missquote(input))
+    // {
+    //     printf("the quotes are not closed!!\n");
+    //     exit(1);
+    // }
     while (input[i])
     {
         if (is_whitespaces(input[i]))

@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/14 22:40:17 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/15 01:59:53 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void replace_env(t_token **tokliste)
                 i++;
             }
         }
-        resultstr = ft_strjoin(resultstr, str); 
+        resultstr = ft_strjoin(resultstr, str);
         tmp->content = resultstr;
         tmp = tmp->next;
     }

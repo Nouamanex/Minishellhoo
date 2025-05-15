@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:56:13 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/07 18:00:58 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/15 02:18:45 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ void parsing(t_data *data)
 {
     t_token *tok;
     t_command *cmdlist;
-    // char *env_test;
     tok = NULL;
     cmdlist = NULL;
     data->input = readline("<minishell> ");
-    // data->input = "ls -l | ls -l"; //hadi bach nchecki leaks makankhdmch b readline
 	if (!data->input)
         exit(1);
+    if (!missquote(data->input))
+    {
+        printf("Unclosed quotes!\n");
+        free(data->input);
+        return;
+    }
     tokens(data->input, &tok);
     replace_env(&tok);
     cmdlist = cmd_build_list(tok);
@@ -40,9 +44,8 @@ int main()
 {
     t_data data;
 
-    while (1)
+    while (2002)
     {
         parsing(&data);
     }
-    // parsing(&data);
 }

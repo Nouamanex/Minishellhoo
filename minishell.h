@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:48:17 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/07 17:50:33 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/15 01:32:55 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ void		clean_cmd(t_command **cmd);
 
 //errors
 int			error_start_line(t_token *tokliste);
+int 		missquote(char *str);
 
 #endif
