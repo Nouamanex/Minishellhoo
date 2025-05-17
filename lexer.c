@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 21:12:15 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/15 02:08:19 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/17 16:45:17 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,6 @@ void tokens(char *input, t_token **tokliste)
     i = 0;
     flag = 0;
     start = 0;
-    // if (!missquote(input))
-    // {
-    //     printf("the quotes are not closed!!\n");
-    //     exit(1);
-    // }
     while (input[i])
     {
         if (is_whitespaces(input[i]))
@@ -123,15 +118,17 @@ void tokens(char *input, t_token **tokliste)
             word = ft_substr(input, start, i - start);
             if (input[i] == '\'')
                 flag = 1;
+            else if (input[i] == '"')
+                flag = 2;
             add_token(tokliste, word, X_WORD, flag);
             free(word);
-            if (input[i] == quote)
-		    i++;
+            if (input[i] == quote )
+		        i++;
         }
         else
         {
             start = i;
-            while (input[i] && !is_symbol(input[i]) && !is_whitespaces(input[i]))
+            while (input[i] && !is_symbol(input[i]) && !is_whitespaces(input[i]) && input[i] != '\'')
                 i++;
             word = ft_substr(input, start, i - start);
             flag = 0;

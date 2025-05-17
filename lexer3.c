@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   lexer3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/15 01:59:53 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/17 15:15:06 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
 //working...
-//mazal khdam 3liha
 
 size_t	ft_strlen_env(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != '$')
+	while (s[i] && s[i] != '$' && s[i] != '\'')
 	{
 		i++;
 	}
@@ -38,7 +37,12 @@ void replace_env(t_token **tokliste)
     int i;
     int j;
     int var_len; //katakhdlia length dyal dakchi limor $ 3la wdit substr
-    
+    // int squote;
+    // int dquote;
+
+    // squote = 0;
+    // dquote = 0;
+
     tmp = *tokliste;
     while (tmp)
     {
@@ -54,6 +58,7 @@ void replace_env(t_token **tokliste)
         {
             if (str[i] == '$' && str[i + 1]) //l9it wahd dollar
             {
+                
                 strbefore = ft_substr(str, 0, i); //dakchi li9bel $ 7etolia hna
                 resultstr = ft_strjoin(resultstr, strbefore); // joinilia dakchi lil9iti m3a result
                 j = i + 1; //bach nfot $

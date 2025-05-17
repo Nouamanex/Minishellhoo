@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:21:46 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/15 02:05:39 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/15 21:53:04 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,4 @@ int missquote(char *str)
     }
     return 1;
 }
+
