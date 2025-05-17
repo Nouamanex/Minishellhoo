@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/17 15:15:06 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/17 22:25:25 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ void replace_env(t_token **tokliste)
     int i;
     int j;
     int var_len; //katakhdlia length dyal dakchi limor $ 3la wdit substr
-    // int squote;
-    // int dquote;
-
-    // squote = 0;
-    // dquote = 0;
 
     tmp = *tokliste;
     while (tmp)

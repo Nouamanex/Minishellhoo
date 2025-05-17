@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:21:46 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/15 21:53:04 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/17 23:29:46 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,31 @@ int error_start_line(t_token *tokliste)
 int missquote(char *str)
 {
     int i;
-    int count;
-    
+    int singleflag;
+    int doubleflag;
+
+    singleflag = 0;
+    doubleflag = 0;
     i = 0;
-    count = 0;
     while (str[i])
     {
-        if (str[i] == X_DQUOTE || str[i] == X_QUOTE)
-            count++;
+        if (str[i] == X_DQUOTE && singleflag == 0)
+        {
+            if (doubleflag == 0)
+                doubleflag = 1;
+            else
+                doubleflag = 0;
+        }
+        else if (str[i] == X_QUOTE && doubleflag == 0)
+        {
+            if (singleflag == 0)
+                singleflag = 1;
+            else
+                singleflag = 0;
+        }
         i++;
     }
-    if (count % 2 != 0)
+    if (singleflag == 1 || doubleflag == 1)
     {
         return 0;
     }
