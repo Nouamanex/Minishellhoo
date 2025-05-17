@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/17 22:25:25 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/18 00:05:16 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,8 @@ void replace_env(t_token **tokliste)
         resultstr = ""; // bach first join madirch mochkil
         while (str[i]) //kandor 3la string dyali
         {
-            if (str[i] == '$' && str[i + 1]) //l9it wahd dollar
+            if (str[i] == '$' && str[i + 1] && ft_isalnum(str[i + 1])) //l9it wahd dollar
             {
-                
                 strbefore = ft_substr(str, 0, i); //dakchi li9bel $ 7etolia hna
                 resultstr = ft_strjoin(resultstr, strbefore); // joinilia dakchi lil9iti m3a result
                 j = i + 1; //bach nfot $
