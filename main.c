@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:56:13 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/17 16:45:40 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/17 17:32:16 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void parsing(t_data *data)
     tok = NULL;
     cmdlist = NULL;
     data->input = readline("<minishell> ");
+    add_history (data->input);
 	if (!data->input)
         exit(1);
     if (!missquote(data->input))
@@ -35,7 +36,8 @@ void parsing(t_data *data)
         write(2, "Something is wrong near line start!\n", 37);
         clean_tokens(&tok);
     }
-    printtoken(tok);
+    // printtoken(tok);
+    print_command(cmdlist);
     clean_tokens(&tok);
     clean_cmd(&cmdlist);
 }
