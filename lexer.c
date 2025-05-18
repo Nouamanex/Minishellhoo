@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 21:12:15 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/17 22:32:59 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/18 14:44:15 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void printtoken(t_token *tokliste)
 {
     while (tokliste)
     {
-        printf("Data --> [%s]\ntype number --> %d\nflag --> %d\n", tokliste->content, tokliste->type, tokliste->flag_quote);
+        printf("Data --> [%s]\n", tokliste->content);
         tokliste = tokliste->next;
     }
 }
@@ -128,7 +128,7 @@ void tokens(char *input, t_token **tokliste)
         else
         {
             start = i;
-            while (input[i] && !is_symbol(input[i]) && !is_whitespaces(input[i]) && input[i] != '\'')
+            while (input[i] && !is_symbol(input[i]) && !is_whitespaces(input[i]) && input[i] != '\'' && input[i] != '"')
                 i++;
             word = ft_substr(input, start, i - start);
             flag = 0;

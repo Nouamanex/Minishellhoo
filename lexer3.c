@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/18 00:05:16 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/18 20:44:38 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,49 @@ size_t	ft_strlen_env(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != '$' && s[i] != '\'')
+	while (s[i] && (ft_isalnum(s[i]) || s[i] == '_'))
 	{
 		i++;
 	}
 	return (i);
+}
+
+void expand_helper(t_token **toklist) //had lfunction drtha 7it kaykhsni nchecki wach dakchi li9dam dollar mcloser b quotes bach it7yd dollar sinon ayb9a ,!!khdmt biha f replace_env()
+{
+    t_token *temp;
+    t_token *before;
+
+    temp = *toklist;
+    before = NULL;
+    if (temp && temp->content && temp->content[0] == '$' && temp->content[0] =='\0')
+    {
+        if (temp->next && temp->next->flag_quote > 0)
+        {
+            *toklist = temp->next;
+            free(temp);
+            return;
+        }
+    }
+    while (temp && temp->next && temp->content && (*temp->content) != '$')
+    {
+        before = temp;
+        temp = temp->next;
+    }
+    if (!temp)
+    {
+        return;
+    }
+    if (temp->next && temp->next->flag_quote > 0)
+    {
+        if (before)
+        {
+            before->next = temp->next;
+        }
+        else
+        {
+            *toklist = temp->next;
+        }
+    }
 }
 
 void replace_env(t_token **tokliste)
@@ -38,6 +76,7 @@ void replace_env(t_token **tokliste)
     int j;
     int var_len; //katakhdlia length dyal dakchi limor $ 3la wdit substr
 
+    
     tmp = *tokliste;
     while (tmp)
     {
@@ -51,7 +90,7 @@ void replace_env(t_token **tokliste)
         resultstr = ""; // bach first join madirch mochkil
         while (str[i]) //kandor 3la string dyali
         {
-            if (str[i] == '$' && str[i + 1] && ft_isalnum(str[i + 1])) //l9it wahd dollar
+            if (str[i] == '$' && str[i + 1] && (ft_isalnum(str[i + 1]) || str[i + 1] == '_')) //l9it wahd dollar
             {
                 strbefore = ft_substr(str, 0, i); //dakchi li9bel $ 7etolia hna
                 resultstr = ft_strjoin(resultstr, strbefore); // joinilia dakchi lil9iti m3a result
@@ -75,4 +114,5 @@ void replace_env(t_token **tokliste)
         tmp->content = resultstr;
         tmp = tmp->next;
     }
+        expand_helper(tokliste);
 }

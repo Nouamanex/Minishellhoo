@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 17 21:33:11 2025
+# Make data base, printed on Sun May 18 20:00:16 2025
 
 # Variables
 
@@ -61,7 +61,7 @@ XDG_DATA_DIRS = /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-sh
 # environment
 VSCODE_CODE_CACHE_PATH = /home/nchagour/.var/app/com.visualstudio.code/config/Code/CachedData/42b266171e51a016313f47d0c48aca9295b9cbb2
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session11
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session15
 # makefile (from 'Makefile', line 4)
 LIBFT = libft/libft.a
 # environment
@@ -109,7 +109,7 @@ FLATPAK_SANDBOX_DIR = /home/nchagour/.var/app/com.visualstudio.code/sandbox
 # environment
 VSCODE_PID = 22
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101089_bxJRp3
+KRB5CCNAME = FILE:/tmp/krb5cc_101089_odhYx3
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -121,7 +121,7 @@ AT_SPI_BUS_ADDRESS = unix:path=/run/flatpak/at-spi-bus
 # environment
 XDG_DATA_HOME = /home/nchagour/.var/app/com.visualstudio.code/data
 # environment
-SESSION_MANAGER = local/c2r6p5.1337.ma:@/tmp/.ICE-unix/622475,unix/c2r6p5.1337.ma:/tmp/.ICE-unix/622475
+SESSION_MANAGER = local/c2r6p5.1337.ma:@/tmp/.ICE-unix/684937,unix/c2r6p5.1337.ma:/tmp/.ICE-unix/684937
 # automatic
 *F = $(notdir $*)
 # environment
@@ -171,7 +171,7 @@ DBUS_SYSTEM_BUS_ADDRESS = unix:path=/run/dbus/system_bus_socket
 # environment
 XDG_CONFIG_HOME = /home/nchagour/.var/app/com.visualstudio.code/config
 # environment
-INVOCATION_ID = 570daf9a6e3044768db29bfdb6abbb82
+INVOCATION_ID = 1e6ea1dba9344957950d1900e9a8e477
 # environment
 DOCKER_HOST = unix:///run/user/101089/docker.sock
 # automatic
@@ -203,7 +203,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/flatpak/exports/share/applications/com.visu
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 622498
+SYSTEMD_EXEC_PID = 684960
 # environment
 NPM_CONFIG_GLOBALCONFIG = /app/etc/npmrc
 # environment
@@ -215,9 +215,9 @@ DISPLAY = :99.0
 # default
 MAKE_VERSION := 4.4.1
 # environment
-MANAGERPID = 621863
+MANAGERPID = 684333
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 624183
+GIO_LAUNCHED_DESKTOP_FILE_PID = 686129
 # environment
 _ = /usr/bin/make
 # environment
@@ -229,7 +229,7 @@ GPG_AGENT_INFO = /run/user/101089/gnupg/S.gpg-agent:0:1
 # environment
 PULSE_CLIENTCONFIG = /run/flatpak/pulse/config
 # environment
-JOURNAL_STREAM = 8:2827610
+JOURNAL_STREAM = 8:3233381
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -273,7 +273,7 @@ ZYPAK_BIN = /app/bin
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=21/164=13%
+# Load=131/1024=13%, Rehash=0, Collisions=21/169=12%
 
 # Pattern-specific Variable Values
 
@@ -281,9 +281,9 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 2048, inode 6293353): 25 files, no impossibilities.
+# . (device 2048, inode 6293353): 24 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,7 +298,6 @@ GDMSESSION = ubuntu
 lexer2.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
- 
 #  Last modified 2025-05-15 21:38:09.002842
 #  File has been updated.
 #  Successfully updated.
@@ -307,7 +306,7 @@ lexer2.o: lexer2.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lexer2'
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.645254175
+#  Last modified 2025-05-18 14:07:32.090142593
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -317,7 +316,7 @@ errors.o: errors.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'errors'
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.608254128
+#  Last modified 2025-05-18 17:36:31.12932725
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -325,10 +324,11 @@ errors.o: errors.c
 
 minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o lexer3.o libft/libft.a
 #  Implicit rule search has not been done.
-#  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:35.168254846
+#  Last modified 2025-05-18 18:57:08.179188131
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 17):
 	$(CC) $(CFLAGS) $^ -o $@ -lreadline
 
@@ -342,10 +342,8 @@ Makefile:
 
 libft/libft.a:
 #  Implicit rule search has not been done.
-#  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:35.158254833
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 20):
 	make -C libft all
 
@@ -353,7 +351,7 @@ libft/libft.a:
 lexer.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 16:45:17.394106
+#  Last modified 2025-05-18 14:44:15.187463584
 #  File has been updated.
 #  Successfully updated.
 
@@ -370,7 +368,7 @@ clean:
 lexer3.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 15:15:06.910545
+#  Last modified 2025-05-18 18:57:41.134233636
 #  File has been updated.
 #  Successfully updated.
 
@@ -378,7 +376,7 @@ cleaning.o: cleaning.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'cleaning'
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.62525415
+#  Last modified 2025-05-18 14:07:32.068142638
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -388,7 +386,7 @@ lexer.o: lexer.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lexer'
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.591254106
+#  Last modified 2025-05-18 14:44:33.829537155
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -412,7 +410,9 @@ all: minishell
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 15):
 	
 
@@ -429,7 +429,7 @@ fclean: clean
 main.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:32:16.292240197
+#  Last modified 2025-05-18 14:33:19.597988023
 #  File has been updated.
 #  Successfully updated.
 
@@ -437,7 +437,7 @@ main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.553254058
+#  Last modified 2025-05-18 14:33:22.986025671
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -447,15 +447,16 @@ main.o: main.c
 errors.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-15 21:53:04.888276
+#  Last modified 2025-05-18 17:26:46.685767107
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 mini_functions.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-15 21:38:09.003842
+#  Last modified 2025-05-17 23:59:23.425205574
 #  File has been updated.
 #  Successfully updated.
 
@@ -463,7 +464,7 @@ mini_functions.o: mini_functions.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'mini_functions'
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.57125408
+#  Last modified 2025-05-18 14:07:32.009142756
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -472,10 +473,27 @@ mini_functions.o: mini_functions.c
 lexer3.o: lexer3.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lexer3'
-#  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-17 17:47:34.6642542
+#  Last modified 2025-05-18 18:57:08.167188114
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := lexer3.o
+# automatic
+# * := lexer3
+# automatic
+# < := lexer3.c
+# automatic
+# + := lexer3.c
+# automatic
+# % := 
+# automatic
+# ^ := lexer3.c
+# automatic
+# ? := lexer3.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
 #  recipe to execute (from 'Makefile', line 12):
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
@@ -500,12 +518,12 @@ cleaning.c:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 43 / storage = 354 B / avg = 8 B
-# current buf: size = 8162 B / used = 354 B / count = 43 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 42 / storage = 347 B / avg = 8 B
+# current buf: size = 8162 B / used = 347 B / count = 42 / avg = 8 B
 
-# strcache performance: lookups = 85 / hit rate = 49%
+# strcache performance: lookups = 84 / hit rate = 50%
 # hash-table stats:
-# Load=43/8192=1%, Rehash=0, Collisions=1/85=1%
-# Finished Make data base on Sat May 17 21:33:11 2025
+# Load=42/8192=1%, Rehash=0, Collisions=1/84=1%
+# Finished Make data base on Sun May 18 20:00:16 2025
 
  

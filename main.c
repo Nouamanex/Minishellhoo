@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:56:13 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/17 22:33:04 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/18 14:33:19 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void parsing(t_data *data)
         write(2, "Something is wrong near line start!\n", 37);
         clean_tokens(&tok);
     }
-    // printtoken(tok);
-    print_command(cmdlist);
+    printtoken(tok);
+    // print_command(cmdlist);
     clean_tokens(&tok);
     clean_cmd(&cmdlist);
 }
