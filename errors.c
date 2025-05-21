@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:21:46 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/18 17:26:46 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:23:50 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,24 @@ int error_start_line(t_token *tokliste)
         return 0;
     if (tokliste->type == X_PIPE)
     {
+        printf("\033[31mparse error near '|'\033[0m\n");
         return 1;
     }
     if ((tokliste->type == X_REDIR_IN || tokliste->type == X_REDIR_OUT || tokliste->type == X_HERE_DOC || tokliste->type == X_DREDIR_OUT) && (!tokliste->next || tokliste->next->type != X_WORD))
     {
+        printf("error parse near %s\n", tokliste->content);
         return 1;
     }
+    while (tokliste)
+    {
+        if (tokliste->content[0] == '|' && !tokliste->next)
+        {
+            printf("\033[31mparse error near '|'\033[0m\n");
+            return 1;
+        }
+        tokliste = tokliste->next;
+    }
+    
     return 0;
 }
 

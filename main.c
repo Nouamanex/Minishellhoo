@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:56:13 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/18 14:33:19 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:18:28 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void parsing(t_data *data)
     t_command *cmdlist;
     tok = NULL;
     cmdlist = NULL;
-    data->input = readline("<minishell> ");
+    data->input = readline("minishell$ ");
     add_history (data->input);
 	if (!data->input)
         exit(1);
@@ -33,11 +33,11 @@ void parsing(t_data *data)
     cmdlist = cmd_build_list(tok);
     if (error_start_line(tok))
     {
-        write(2, "Something is wrong near line start!\n", 37);
         clean_tokens(&tok);
+        return;
     }
-    printtoken(tok);
-    // print_command(cmdlist);
+    // printtoken(tok);
+    print_command(cmdlist);
     clean_tokens(&tok);
     clean_cmd(&cmdlist);
 }

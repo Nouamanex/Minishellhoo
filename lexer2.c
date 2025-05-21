@@ -6,7 +6,7 @@
 /*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:57:09 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/15 02:00:28 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:19:02 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,8 +126,8 @@ void print_command(t_command *cmds)
             printf("Arg[%d]: %s\n", i, cmds->full_cmd[i]);
             i++;
         }
-        printf("Input file: %d\n", cmds->input_file);
-        printf("Output file: %d\n", cmds->output_file);
+        // printf("Input file: %d\n", cmds->input_file);
+        // printf("Output file: %d\n", cmds->output_file);
         cmds = cmds->next;
     }
 }
