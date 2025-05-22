@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/18 20:44:38 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/21 20:18:24 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,5 @@ void replace_env(t_token **tokliste)
         tmp->content = resultstr;
         tmp = tmp->next;
     }
-        expand_helper(tokliste);
+    expand_helper(tokliste);
 }

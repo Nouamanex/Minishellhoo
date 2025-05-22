@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:48:17 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/21 18:16:40 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:04:05 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 enum e_type
 {
     X_SPACE = ' ',
-	X_NEW_LINE = '\n',
 	X_QUOTE = '\'',
 	X_DQUOTE = '\"',
 	X_DOLLAR = '$',
@@ -67,6 +66,8 @@ typedef struct s_command
 int			is_whitespaces(int c);
 int			is_symbol(int c);
 char* 		checkDollar(char *str);
+int 		tokens_size(t_token *tok);
+int 		is_operator(int type);
 
 //tokens
 void		tokens(char *input, t_token **tokliste);
@@ -84,7 +85,9 @@ void		clean_tokens(t_token **tokliste);
 void		clean_cmd(t_command **cmd);
 
 //errors
-int			error_start_line(t_token *tokliste);
+//int			error_start_line(t_token *tokliste);
 int 		missquote(char *str);
+int 		operator_error(t_token *tokens);
+int 		operation_errors(t_token *tokliste);
 
 #endif

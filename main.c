@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:56:13 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/21 18:18:28 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:04:58 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void parsing(t_data *data)
     }
     tokens(data->input, &tok);
     replace_env(&tok);
-    cmdlist = cmd_build_list(tok);
-    if (error_start_line(tok))
+    if (operation_errors(tok))
     {
         clean_tokens(&tok);
         return;
     }
-    // printtoken(tok);
-    print_command(cmdlist);
+    cmdlist = cmd_build_list(tok);
+    printtoken(tok);
+    // print_command(cmdlist);
     clean_tokens(&tok);
     clean_cmd(&cmdlist);
 }

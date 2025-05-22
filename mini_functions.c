@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:04:37 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/17 23:59:23 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:03:53 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,23 @@ char* checkDollar(char *str)
         i++;
     }
     return NULL;
+}
+
+int tokens_size(t_token *tok)
+{
+    int count;
+
+    count = 0;
+    while (tok)
+    {
+        count++;
+        tok = tok->next;
+    }
+    return count;
+}
+
+int is_operator(int type)
+{
+    return (type == X_PIPE || type == X_REDIR_IN || type == X_REDIR_OUT
+        || type == X_DREDIR_OUT || type == X_HERE_DOC);
 }

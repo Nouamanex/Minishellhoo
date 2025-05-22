@@ -3,41 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:21:46 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/21 18:23:50 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:06:15 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int error_start_line(t_token *tokliste)
+int operation_errors(t_token *tokliste)
 {
     if (!tokliste)
-        return 0;
-    if (tokliste->type == X_PIPE)
-    {
-        printf("\033[31mparse error near '|'\033[0m\n");
         return 1;
-    }
-    if ((tokliste->type == X_REDIR_IN || tokliste->type == X_REDIR_OUT || tokliste->type == X_HERE_DOC || tokliste->type == X_DREDIR_OUT) && (!tokliste->next || tokliste->next->type != X_WORD))
-    {
-        printf("error parse near %s\n", tokliste->content);
-        return 1;
-    }
+
     while (tokliste)
     {
-        if (tokliste->content[0] == '|' && !tokliste->next)
+        if (is_operator(tokliste->type) && (!tokliste->next || is_operator(tokliste->next->type)))
         {
-            printf("\033[31mparse error near '|'\033[0m\n");
+            printf("\033[31mparse error near %s\033[0m\n", tokliste->content);
             return 1;
         }
         tokliste = tokliste->next;
     }
-    
     return 0;
 }
+
+// int operator_error_dup(t_token *tokens)
+// {
+       
+// }
+// int operator_error(t_token *tokens)
+// {
+//     int lenliste;
+//     exit(0);
+//     lenliste = tokens_size(tokens);
+//     if (lenliste == 1)
+//     {
+//         printf("syntax error near unexpected token `newline'\n");
+//         return 1;
+//     }
+//     return 0;
+// }
 
 int missquote(char *str)
 {

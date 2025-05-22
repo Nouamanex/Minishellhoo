@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:57:09 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/21 18:19:02 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/21 23:27:07 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ t_command *cmd_build_list(t_token *tokliste)
         {
             add_arg(cmd, tokliste->content); // zido 3la words lakhrin bach nkmel command
         }
-        else if (tokliste->type == X_REDIR_IN)
+        else if (tokliste->type == X_REDIR_IN && tokliste->next)
         {
             tokliste = tokliste->next;
             cmd->input_file = open(tokliste->content, O_RDONLY | O_CREAT);
         }
-        else if (tokliste->type == X_REDIR_OUT || tokliste->type == X_DREDIR_OUT)
+        else if ((tokliste->type == X_REDIR_OUT || tokliste->type == X_DREDIR_OUT) && tokliste->next)
         {
             tokliste = tokliste->next;
             cmd->output_file = open(tokliste->content, O_RDONLY | O_CREAT);

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 18 20:56:01 2025
+# Make data base, printed on Wed May 21 23:01:34 2025
 
 # Variables
 
@@ -59,9 +59,9 @@ XDG_DATA_DIRS = /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-sh
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/nchagour/.var/app/com.visualstudio.code/config/Code/CachedData/42b266171e51a016313f47d0c48aca9295b9cbb2
+VSCODE_CODE_CACHE_PATH = /home/nchagour/.var/app/com.visualstudio.code/config/Code/CachedData/848b80aeb52026648a8ff9f7c45a9b0a80641e2e
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session16
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session23
 # makefile (from 'Makefile', line 4)
 LIBFT = libft/libft.a
 # environment
@@ -100,6 +100,7 @@ XDG_CONFIG_DIRS = /app/etc/xdg:/etc/xdg
 ALSA_CONFIG_PATH = /usr/share/alsa/alsa-flatpak.conf
 # environment
 XDG_SESSION_DESKTOP = ubuntu
+ 
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # environment
@@ -109,7 +110,7 @@ FLATPAK_SANDBOX_DIR = /home/nchagour/.var/app/com.visualstudio.code/sandbox
 # environment
 VSCODE_PID = 22
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101089_iE578y
+KRB5CCNAME = FILE:/tmp/krb5cc_101089_dBbMeh
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -121,7 +122,7 @@ AT_SPI_BUS_ADDRESS = unix:path=/run/flatpak/at-spi-bus
 # environment
 XDG_DATA_HOME = /home/nchagour/.var/app/com.visualstudio.code/data
 # environment
-SESSION_MANAGER = local/c2r6p5.1337.ma:@/tmp/.ICE-unix/694297,unix/c2r6p5.1337.ma:/tmp/.ICE-unix/694297
+SESSION_MANAGER = local/c2r6p5.1337.ma:@/tmp/.ICE-unix/854790,unix/c2r6p5.1337.ma:/tmp/.ICE-unix/854790
 # automatic
 *F = $(notdir $*)
 # environment
@@ -171,7 +172,7 @@ DBUS_SYSTEM_BUS_ADDRESS = unix:path=/run/dbus/system_bus_socket
 # environment
 XDG_CONFIG_HOME = /home/nchagour/.var/app/com.visualstudio.code/config
 # environment
-INVOCATION_ID = 4161853a54304278a0a79127a3c0f775
+INVOCATION_ID = e52eb7aa8f364b02aabfe6de30669ba7
 # environment
 DOCKER_HOST = unix:///run/user/101089/docker.sock
 # automatic
@@ -203,7 +204,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/flatpak/exports/share/applications/com.visu
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 694320
+SYSTEMD_EXEC_PID = 854813
 # environment
 NPM_CONFIG_GLOBALCONFIG = /app/etc/npmrc
 # environment
@@ -215,9 +216,9 @@ DISPLAY = :99.0
 # default
 MAKE_VERSION := 4.4.1
 # environment
-MANAGERPID = 693707
+MANAGERPID = 854188
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 695531
+GIO_LAUNCHED_DESKTOP_FILE_PID = 855472
 # environment
 _ = /usr/bin/make
 # environment
@@ -229,7 +230,7 @@ GPG_AGENT_INFO = /run/user/101089/gnupg/S.gpg-agent:0:1
 # environment
 PULSE_CLIENTCONFIG = /run/flatpak/pulse/config
 # environment
-JOURNAL_STREAM = 8:3298283
+JOURNAL_STREAM = 8:3979108
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -239,7 +240,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/101089/vscode-527c89b3-1.96-main.sock
+VSCODE_IPC_HOOK = /run/user/101089/vscode-527c89b3-1.10-main.sock
 # environment
 FT_HOOK_PATHNAME = login-user.d
 # default
@@ -261,6 +262,7 @@ XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/nchagour
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs notintermediate shell-export archives jobserver jobserver-fifo output-sync check-symlink load
 # makefile (from 'Makefile', line 3)
+ 
 CC = cc
 # environment
 FLATPAK_ID = com.visualstudio.code
@@ -273,7 +275,7 @@ ZYPAK_BIN = /app/bin
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=21/169=12%
+# Load=131/1024=13%, Rehash=0, Collisions=21/164=13%
 
 # Pattern-specific Variable Values
 
@@ -281,9 +283,9 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 2048, inode 6293353): 16 files, no impossibilities.
+# . (device 2048, inode 6293353): 23 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 23 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -295,25 +297,39 @@ GDMSESSION = ubuntu
 # Files
 
 # Not a target:
-lexer2.o:
- 
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+lexer2.c:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 20:16:58.635731578
+#  File has been updated.
+#  Successfully updated.
 
-# Not a target:
-errors.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+lexer2.o: lexer2.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'lexer2'
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.648088045
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) -c $< -o $@ 
+
+errors.o: errors.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'errors'
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.610088084
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o lexer3.o libft/libft.a
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:30.219087453
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 17):
 	$(CC) $(CFLAGS) $^ -o $@ -lreadline
 
@@ -321,16 +337,26 @@ minishell: main.o mini_functions.o lexer.o errors.o cleaning.o lexer2.o lexer3.o
 Makefile:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-15 21:38:09.001842
+#  Last modified 2025-05-18 21:01:42.546961606
 #  File has been updated.
 #  Successfully updated.
 
 libft/libft.a:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:30.208087464
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 20):
 	make -C libft all
+
+# Not a target:
+lexer.c:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-18 14:44:15.187463584
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -342,16 +368,32 @@ clean:
 	rm -f $(OBJ)
 
 # Not a target:
-cleaning.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+lexer3.c:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 20:18:24.040569735
+#  File has been updated.
+#  Successfully updated.
 
-# Not a target:
-lexer.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+cleaning.o: cleaning.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'cleaning'
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.628088066
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) -c $< -o $@ 
+
+lexer.o: lexer.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'lexer'
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.593088102
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -371,9 +413,7 @@ all: minishell
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 15):
 	
 
@@ -390,68 +430,84 @@ fclean: clean
 main.c:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-05-18 14:33:19.597988023
+#  Last modified 2025-05-21 22:07:18.719099387
 #  File has been updated.
 #  Successfully updated.
 
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  File does not exist.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.551088145
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := main.o
-# automatic
-# * := main
-# automatic
-# < := main.c
-# automatic
-# + := main.c
-# automatic
-# % := 
-# automatic
-# ^ := main.c
-# automatic
-# ? := main.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
 # Not a target:
-mini_functions.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+errors.c:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 20:16:58.635731578
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-lexer3.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+mini_functions.c:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 21:25:49.668596792
+#  File has been updated.
+#  Successfully updated.
+
+mini_functions.o: mini_functions.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'mini_functions'
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.570088126
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) -c $< -o $@ 
+
+lexer3.o: lexer3.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'lexer3'
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-21 22:07:29.667088025
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+cleaning.c:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2025-05-15 21:38:09.002842
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/51=0%
+# Load=24/1024=2%, Rehash=0, Collisions=0/75=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
+ 
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 296 B / avg = 8 B
-# current buf: size = 8162 B / used = 296 B / count = 36 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 41 / storage = 339 B / avg = 8 B
+# current buf: size = 8162 B / used = 339 B / count = 41 / avg = 8 B
 
-# strcache performance: lookups = 58 / hit rate = 37%
+# strcache performance: lookups = 83 / hit rate = 50%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Sun May 18 20:56:01 2025
+# Load=41/8192=1%, Rehash=0, Collisions=1/83=1%
+# Finished Make data base on Wed May 21 23:01:34 2025
 
  
