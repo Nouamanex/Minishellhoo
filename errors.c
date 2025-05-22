@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:21:46 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/22 01:06:15 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:07:20 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,6 @@ int operation_errors(t_token *tokliste)
     }
     return 0;
 }
-
-// int operator_error_dup(t_token *tokens)
-// {
-       
-// }
-// int operator_error(t_token *tokens)
-// {
-//     int lenliste;
-//     exit(0);
-//     lenliste = tokens_size(tokens);
-//     if (lenliste == 1)
-//     {
-//         printf("syntax error near unexpected token `newline'\n");
-//         return 1;
-//     }
-//     return 0;
-// }
 
 int missquote(char *str)
 {

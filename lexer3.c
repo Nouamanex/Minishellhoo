@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:29:42 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/21 20:18:24 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:32:41 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void expand_helper(t_token **toklist) //had lfunction drtha 7it kaykhsni nchecki
         if (temp->next && temp->next->flag_quote > 0)
         {
             *toklist = temp->next;
+            free(temp->content);
             free(temp);
             return;
         }
@@ -61,6 +62,8 @@ void expand_helper(t_token **toklist) //had lfunction drtha 7it kaykhsni nchecki
         {
             *toklist = temp->next;
         }
+        free(temp->content);
+        free(temp);
     }
 }
 
@@ -72,6 +75,7 @@ void replace_env(t_token **tokliste)
     char *strbefore; //dakchi li9bel $
     char *strvar; //dakchi limor $ kanchecki wach dakhl f env okan7t result f getenv
     char *envvalue; //dakchi lirj3atlia getenv matalan nchagour
+    char *temp;
     int i;
     int j;
     int var_len; //katakhdlia length dyal dakchi limor $ 3la wdit substr
@@ -87,20 +91,26 @@ void replace_env(t_token **tokliste)
         }
         str = tmp->content; // bayna :)
         i = 0; 
-        resultstr = ""; // bach first join madirch mochkil
+        resultstr = ft_strdup(""); // bach first join madirch mochkil
         while (str[i]) //kandor 3la string dyali
         {
             if (str[i] == '$' && str[i + 1] && (ft_isalnum(str[i + 1]) || str[i + 1] == '_')) //l9it wahd dollar
             {
                 strbefore = ft_substr(str, 0, i); //dakchi li9bel $ 7etolia hna
+                temp = resultstr;
                 resultstr = ft_strjoin(resultstr, strbefore); // joinilia dakchi lil9iti m3a result
+                free(temp);
+                free(strbefore);
                 j = i + 1; //bach nfot $
                 var_len = ft_strlen_env(&str[j]); //hssblia length dyal dakchi limor $
                 strvar = ft_substr(str, j, var_len); // 7etolia hna bach nsifto l getenv
                 envvalue = getenv(strvar); // sifto db l getenv
+                free(strvar);
                 if (envvalue) //ila l9iti chihaja
                 {
+                    temp = resultstr;
                     resultstr = ft_strjoin(resultstr, envvalue); //joinilia dkchi likhrjlia m3a result kil3ada
+                    free(temp);
                 }
                 i = j + var_len; //i daba khsha tskipi dkchi kaml bach khdemna bach nupdati string dyali bach nkml bih lkhdma
                 str = &str[i]; //$USER$PATH = $PATH
@@ -110,7 +120,10 @@ void replace_env(t_token **tokliste)
                 i++;
             }
         }
+        temp = resultstr;
         resultstr = ft_strjoin(resultstr, str);
+        free(temp);
+        free(tmp->content);
         tmp->content = resultstr;
         tmp = tmp->next;
     }
