@@ -6,7 +6,7 @@
 /*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:04:37 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/22 01:03:53 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:09:29 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,9 @@ int is_operator(int type)
 {
     return (type == X_PIPE || type == X_REDIR_IN || type == X_REDIR_OUT
         || type == X_DREDIR_OUT || type == X_HERE_DOC);
+}
+
+int is_redir(int type)
+{
+    return (type == X_REDIR_IN || type == X_REDIR_OUT || type == X_DREDIR_OUT || type == X_HERE_DOC);
 }

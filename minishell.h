@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:48:17 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/22 18:26:40 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:38:10 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,24 @@ int			is_symbol(int c);
 char* 		checkDollar(char *str);
 int 		tokens_size(t_token *tok);
 int 		is_operator(int type);
+int 		is_redir(int type);
 
 //tokens
 void		tokens(char *input, t_token **tokliste);
 void		printtoken(t_token *tokliste);
 void		add_token(t_token **head, char *data, int type, int flag);
+
+//env
 void		replace_env(t_token **tokliste);
 
 //command
 t_command 	*create_cmd();
 t_command *cmd_build_list(t_token *tokliste);
 void print_command(t_command *list_cmd);
+
+//redir
+t_redir 	*create_redir(int type, char *filename);
+void 		add_redir(t_redir **redirliste, t_redir *new_redir);
 
 //cleaning
 void		clean_tokens(t_token **tokliste);

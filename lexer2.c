@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:57:09 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/22 18:04:29 by nouamane         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:51:02 by nchagour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ t_command *cmd_build_list(t_token *tokliste)
 {
     t_command *liste_cmd;
     t_command *cmd;
+    t_redir   *new_redir;
+    int redir_type;
 
     liste_cmd = NULL;
     cmd = NULL;
@@ -91,6 +93,15 @@ t_command *cmd_build_list(t_token *tokliste)
         {
             add_command(&liste_cmd, cmd);// ila kan pipe kay3ni bli salit la command o daba khassni nzidha f liste
             cmd = NULL; // bach nwjed l lcommand jaya
+        }else if (is_redir(tokliste->type))
+        {
+            redir_type = tokliste->type;
+            tokliste = tokliste->next;
+            if (tokliste && tokliste->type == X_WORD)
+            {
+                new_redir = create_redir(redir_type, tokliste->content);
+                add_redir(&(cmd->redir), new_redir);
+            }
         }
         tokliste = tokliste->next;
     }
@@ -104,6 +115,7 @@ t_command *cmd_build_list(t_token *tokliste)
 void print_command(t_command *cmds)
 {
     int i;
+    t_redir *redir;
 
     while (cmds)
     {
@@ -113,6 +125,27 @@ void print_command(t_command *cmds)
         {
             printf("Arg[%d]: %s\n", i, cmds->full_cmd[i]);
             i++;
+        }
+        redir = cmds->redir;
+        while (redir)
+        {
+            if (redir->type == X_HERE_DOC)
+            {
+                printf("type : << , File : [%s]\n", redir->filename);// hadi HEREDOC
+            }
+            else if (redir->type == X_DREDIR_OUT)
+            {
+                printf("type : >> , FILE : [%s]\n", redir->filename); // hadi Append Redir Output
+            }
+            else if (redir->type == X_REDIR_IN)
+            {
+                printf("type : < , File : [%s]\n", redir->filename); // hadi redir input
+            }
+            else if (redir->type == X_REDIR_OUT)
+            {
+                 printf("type : > , File : [%s]\n", redir->filename); // hadi redir output
+            }
+            redir = redir->next;
         }
         cmds = cmds->next;
     }
