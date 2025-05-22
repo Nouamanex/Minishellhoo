@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:48:17 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/22 01:04:05 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:26:40 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,20 @@ typedef struct s_token {
 	struct s_token *next;
 } t_token;
 
+typedef struct s_redir //drtha in case 3ndna ktr mn input file wahd oktr mn output file wahd 
+{	
+	char *filename;
+	int type;
+	struct s_redir *next;
+}t_redir;
+
 // for commands convert tokens into a list command
 typedef struct s_command
 {
 	char **full_cmd; // ghanjm3 fiha dok tokens li3la chkel command
-	int input_file; // file descriptor for input redirection <
-	int output_file; // file descriptor for output redirection >
+	t_redir *redir;
 	struct s_command *next;
-}t_command; //!!!bnisba l hadi rah kayna case dyal echo nouamane>file1.txt>file2.txt  ya3ni 3ndna 2 files!! 
-			//so hna ach kaytra rah kay7el lfile lwel okayclosih makayktb fih walo o akhir wahd howa fach kaykteb howa likankhbi fd dyalo!
-			//lprob li3ndi howa anaho mol execution fach ghaybghi idir fork ghaywliw 3ndna 2 processes
+}t_command;
 
 //some parsing helper functions
 int			is_whitespaces(int c);

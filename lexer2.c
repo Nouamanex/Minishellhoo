@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchagour <nchagour@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nouamane <nouamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:57:09 by nchagour          #+#    #+#             */
-/*   Updated: 2025/05/21 23:27:07 by nchagour         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:04:29 by nouamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ t_command *create_cmd()
         return NULL;
     cmd->full_cmd = NULL;
     cmd->next = NULL;
-    cmd->input_file = -1;
-    cmd->output_file = -1;
     cmd->next = NULL;
     return  cmd;
 }
@@ -89,16 +87,6 @@ t_command *cmd_build_list(t_token *tokliste)
         {
             add_arg(cmd, tokliste->content); // zido 3la words lakhrin bach nkmel command
         }
-        else if (tokliste->type == X_REDIR_IN && tokliste->next)
-        {
-            tokliste = tokliste->next;
-            cmd->input_file = open(tokliste->content, O_RDONLY | O_CREAT);
-        }
-        else if ((tokliste->type == X_REDIR_OUT || tokliste->type == X_DREDIR_OUT) && tokliste->next)
-        {
-            tokliste = tokliste->next;
-            cmd->output_file = open(tokliste->content, O_RDONLY | O_CREAT);
-        }
         else if (tokliste->type == X_PIPE)
         {
             add_command(&liste_cmd, cmd);// ila kan pipe kay3ni bli salit la command o daba khassni nzidha f liste
@@ -126,8 +114,6 @@ void print_command(t_command *cmds)
             printf("Arg[%d]: %s\n", i, cmds->full_cmd[i]);
             i++;
         }
-        // printf("Input file: %d\n", cmds->input_file);
-        // printf("Output file: %d\n", cmds->output_file);
         cmds = cmds->next;
     }
 }
